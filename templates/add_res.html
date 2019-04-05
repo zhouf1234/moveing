@@ -1,0 +1,321 @@
+<div role="document"  style="width: 850px;margin-left: 100px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" id="close0">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">添加新影视资源</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" id="editForm">
+		  <div class="form-group">
+		    <label for="inputEmailEdit" class="col-sm-2 control-label">资源名称:</label>
+		    <div class="col-sm-10">
+{#		      <input type="email" class="form-control" id="inputEmailEdit" value="fmuncle@163" readonly>#}
+                <input type="text" class="form-control" id="rname"  name="rname" placeholder="请输入资源名称" >
+		    </div>
+		  </div>
+
+        <div class="form-group">
+		    <label for="inputEmailEdit" class="col-sm-2 control-label">导演:</label>
+		    <div class="col-sm-10">
+               <input type="text" class="form-control" id="rdirector"  name="rdirector" placeholder="请输入导演姓名" >
+		    </div>
+		  </div>
+
+        <div class="form-group">
+		    <label for="inputEmailEdit" class="col-sm-2 control-label">编剧:</label>
+		    <div class="col-sm-10">
+                <input type="text" class="form-control" id="screenwriter"  name="screenwriter" placeholder="请输入编剧姓名" >
+		    </div>
+		  </div>
+
+        <div class="form-group">
+		    <label for="inputEmailEdit" class="col-sm-2 control-label">演员:</label>
+		    <div class="col-sm-10">
+                <input type="text" class="form-control" id="actor"  name="actor" placeholder="请输入演员姓名" >
+		    </div>
+		  </div>
+
+        <div class="form-group">
+		    <label for="inputEmailEdit" class="col-sm-2 control-label">地区:</label>
+		    <div class="col-sm-10">
+                <select class="form-control"  name="area" id="area">
+                <option value=" ">请选择地区</option>
+                    {% for a in are %}
+                        <option value="{{ a.id }}">{{ a.aname }}</option>
+                    {% endfor %}
+                </select>
+		    </div>
+		  </div>
+
+        <div class="form-group">
+		    <label for="inputEmailEdit" class="col-sm-2 control-label">语言:</label>
+		    <div class="col-sm-10">
+                <input type="text" class="form-control" id="language"  name="language" placeholder="请输入语种" >
+		    </div>
+		  </div>
+
+        <div class="form-group">
+		    <label for="inputEmailEdit" class="col-sm-2 control-label">上映时间:</label>
+		    <div class="col-sm-10">
+                <input type="date" class="form-control" id="time"  name="time" placeholder="请选择上映时间" >
+		    </div>
+		  </div>
+
+        <div class="form-group">
+		    <label for="inputEmailEdit" class="col-sm-2 control-label">片长:</label>
+		    <div class="col-sm-10">
+                <input type="number" class="form-control" id="length"  name="length" placeholder="请输入时长" >
+		    </div>
+		  </div>
+
+        <div class="form-group">
+		    <label for="inputEmailEdit" class="col-sm-2 control-label">其他名字:</label>
+		    <div class="col-sm-10">
+                <input type="text" class="form-control" id="othername"  name="othername" placeholder="请输入其他名字" >
+		    </div>
+		  </div>
+
+        <div class="form-group">
+		    <label for="inputEmailEdit" class="col-sm-2 control-label">评分:</label>
+		    <div class="col-sm-10">
+                <input type="number" min="0.00" max="10.00" step="0.1" class="form-control" id="score"  name="score" placeholder="请输入评分" >
+		    </div>
+		  </div>
+
+        <div class="form-group">
+            <label for="inputAddressEdit" class="col-sm-2 control-label">是否精选:</label>
+            <div class="col-sm-10">
+                <input type="radio" name="issuperme" value="False" checked>否
+                <input type="radio" name="issuperme" value="True">是
+            </div>
+          </div>
+
+        <div class="form-group">
+		    <label for="inputDeDegreeEdit" class="col-sm-2 control-label">资源类型</label>
+		    <div class="col-sm-10">
+                <input type="radio" name="restype" value="MV" checked>电影
+                <input type="radio" name="restype" value="TV">电视剧
+		    </div>
+		  </div>
+
+        <div class="form-group">
+		    <label for="inputNameEdit" class="col-sm-2 control-label">海报:</label>
+		    <div class="col-sm-10">
+		      <label>
+                <img class="avatar-image" src=" " width="300" height="300" alt="">
+                <input type="file" id="picture" name="picture">
+            </label>
+		    </div>
+		  </div>
+
+        <div class="form-group">
+		    <label for="inputDeDegreeEdit" class="col-sm-2 control-label">简介：</label>
+		    <div class="col-sm-10">
+                <textarea name="context" id="context" cols="90" rows="3"></textarea>
+		    </div>
+		  </div>
+
+        <div class="form-group">
+		    <label for="inputDeDegreeEdit" class="col-sm-2 control-label">类型：</label>
+		    <div class="col-sm-10">
+                <select class="form-control" name="catalog" id="catalog">
+                <option value=" ">请选择类型</option>
+                  {% for c in cate %}
+                    <option value="{{ c.id }}">{{ c.cname}}</option>
+                  {% endfor %}
+              </select>
+		    </div>
+		  </div>
+
+        <div class="form-group">
+		    <label for="inputEmailEdit" class="col-sm-2 control-label">清晰程度:</label>
+		    <div class="col-sm-10">
+                <input type="text" class="form-control" id="ptype"  name="ptype" placeholder="请输入清晰程度" >
+		    </div>
+		  </div>
+
+        <div class="form-group">
+		    <label for="inputEmailEdit" class="col-sm-2 control-label">播放地址:</label>
+		    <div class="col-sm-10">
+                <input type="text" class="form-control" id="purl"  name="purl" placeholder="请输入播放地址" >
+		    </div>
+		  </div>
+
+        <div class="form-group">
+		    <label for="inputEmailEdit" class="col-sm-2 control-label">分集地址:</label>
+		    <div class="col-sm-10">
+                <input type="text" class="form-control" id="pname"  name="pname" placeholder="请输入分集地址" >
+		    </div>
+		  </div>
+
+        <div class="form-group">
+		    <label for="inputDeDegreeEdit" class="col-sm-2 control-label">播放方式:</label>
+		    <div class="col-sm-10">
+                <input type="radio" name="mtype" value="XIGUA" checked>西瓜视频
+                <input type="radio" name="mtype" value="JIJI">吉吉影音
+                <input type="radio" name="mtype" value="ONLINE">在线播放
+		    </div>
+		  </div>
+
+        <div class="form-group">
+		    <label for="inputNameEdit" class="col-sm-2 control-label">视频:</label>
+		    <div class="col-sm-10">
+                <select class="form-control" name="pmov" id="pmov">
+                <option value=" ">请选择文件</option>
+                  {% for f in fil %}
+                    <option value="{{ f.id }}">{{ f.headImg}}</option>
+                  {% endfor %}
+              </select>
+		    </div>
+		  </div>
+		</form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-link" id="close">取消</button>
+        <button type="submit" class="btn btn-primary" form="addForm" id="btn">提交</button>
+      </div>
+    </div>
+</div>
+
+<div class="clear" style="clear: both;"></div>
+<div id="message" class="message" style="width: 400px;height: 200px;background-color: white;border: 2px solid #EAF2D3;top: 900px;left:360px;position: absolute;display: none">
+    <h4 style="font-size: 32px;margin-left: 102px;margin-top: 20px;color: black">添加成功！</h4>
+    <div class="add" style="width: 104px;height: 38px;border: 1px solid #98bf21;cursor: pointer;text-align: center;font-size: 22px;margin-top: 50px;margin-left: 40px;">继续添加</div>
+    <div class="list" style="width: 104px;height: 38px;border: 1px solid #98bf21;cursor: pointer;text-align: center;font-size: 22px;margin-top: -38px;margin-left: 240px;">查看</div>
+</div>
+
+<script>
+
+
+    $('#close').click(()=>{
+          $.ajax({
+                    url: '/moves/',
+                    type: 'get',
+                    success:(data)=>{
+                        $('#mian').css('display', 'block');
+                        $('.infof').html(data);
+                    }
+                })
+    });
+
+    $('#close0').click(()=>{
+          $.ajax({
+                    url: '/moves/',
+                    type: 'get',
+                    success:(data)=>{
+                        $('#mian').css('display', 'block');
+                        $('.infof').html(data);
+                    }
+                })
+    });
+
+    $("#picture").on('change',()=>{
+        var choose_file = $("#picture")[0].files[0];
+        console.log(choose_file) ;
+        var reader = new FileReader();
+        reader.readAsDataURL(choose_file);//读取用户上传的图片路径
+        reader.onload = function(){
+            $(".avatar-image").attr('src',reader.result)
+        }
+
+    });
+
+    function get_str_vall() {
+        let rname = $("#rname").val(); //
+        let rdirector = $('#rdirector').val(); //
+        let screenwriter = $("#screenwriter").val();
+        let actor = $("#actor").val();
+        let area = $('#area option:selected').val(); //
+
+        let language = $("#language").val(); //
+        let time = $('#time').val(); //
+        let length = $("#length").val();
+        let othername = $("#othername").val();
+        let score = $("#score").val(); //
+
+        let issuperme = $("[name='issuperme']:checked").val();
+        let restype = $("[name='restype']:checked").val();
+        let context = $("#context").val();
+        let catalog = $('#catalog option:selected').val(); //
+
+        let ptype = $("#ptype").val();
+        let purl = $("#purl").val();
+        let pname = $("#pname").val(); //
+        let mtype = $("[name='mtype']:checked").val();
+        let pmov = $('#pmov option:selected').val(); //
+
+        let data = {
+            'rname': rname,
+            'rdirector': rdirector,
+            'screenwriter': screenwriter,
+            'actor': actor,
+            'area': area,
+            'language':language,
+            'time': time,
+            'length': length,
+            'othername': othername,
+            'score': score,
+            'issuperme': issuperme,
+            'restype':restype,
+            'context': context,
+            'catalog': catalog,
+            'ptype': ptype,
+            'purl': purl,
+            'pname': pname,
+            'mtype':mtype,
+            'pmov':pmov,
+        };
+        console.log(data);
+        data = JSON.stringify(data);
+        return data;
+    }
+
+
+    $('#btn').click(()=> {
+        let data = get_str_vall(); // 文字数据
+
+        formdata = new FormData();
+        formdata.append('data', data);
+        formdata.append('picture', $("#picture")[0].files[0]);
+        console.log(formdata);
+
+        $.ajax({
+            processData: false,
+            contentType: false,
+            url: '/update_res/',
+            type: 'post',
+            async: true,
+            data: formdata,
+            success: (data) => {
+                if (data['status'] === 'success') {  //判断
+                    $('.message').css('display', 'block');
+                }
+            }
+        })
+    })
+
+    //提交成功后跳出的框内的操作
+    $('.list').click(()=>{
+        $.ajax({
+            url:'/moves/',
+            type:'get',
+            success:(data)=>{
+                $('#mian').css('display', 'block');
+                $('.infof').html(data);
+            }
+        })
+    });
+    $('.add').click(()=>{
+        $('.message').css('display','none');
+        $.ajax({
+            url:'/add_res/',
+            type:'get',
+            success:(data)=>{
+                $('#mian').css('display', 'block');
+                $('.infof').html(data);
+            }
+       })
+    });
+
+</script>

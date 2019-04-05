@@ -1,0 +1,40 @@
+<div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="my-panel-head">
+          <div class="my-title"></div>
+        </div>
+        <div class="row">
+          <div class="my-table-toolbar">
+            <form class="form-inline">
+{#              <div class="form-group">#}
+{#                <label class="sr-only" for="table-search">table search</label>#}
+{#                <input type="text" class="form-control" id="table-search" placeholder="搜索">#}
+{#              </div>#}
+{#              <button class="btn btn-primary">搜索</button>#}
+{#              <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#myModal">添加#}
+{#              </button>#}
+{#                <a href="#" type="button"  onclick="adds_write()" class="btn btn-info" style="margin-left: 15px">#}
+{#                    添加新作业#}
+{#                </a>#}
+            </form>
+          </div>
+        </div>
+        <!-- Table -->
+        <div class="my-table-wrapper">
+          <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>地区</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for a in are %}
+                <tr>
+                    <td>{{ a.aname }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+      </div>
